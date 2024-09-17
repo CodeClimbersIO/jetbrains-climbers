@@ -367,7 +367,7 @@ class CodeClimbers : ApplicationComponent {
         private fun getBuiltinProxy(): String? {
             val config = HttpConfigurable.getInstance()
 
-            if (!config.isHttpProxyEnabledForUrl("https://loom.getCodeClimbers.dev")) return null
+            if (!config.isHttpProxyEnabledForUrl("http://localhost:14400")) return null
 
             val host = config.PROXY_HOST
             if (host != null) {
@@ -502,7 +502,7 @@ class CodeClimbers : ApplicationComponent {
         }
 
         fun openDashboardWebsite() {
-            BrowserUtil.browse("https://app.CodeClimbers.xyz/")
+            BrowserUtil.browse("http://localhost:14400/")
         }
 
         private var todayText = "initialized"
@@ -615,12 +615,12 @@ class CodeClimbers : ApplicationComponent {
     override fun initComponent() {
         VERSION = try {
             // support older IDE versions with deprecated PluginManager
-            PluginManager.getPlugin(PluginId.getId("xyz.CodeClimbers.jetbrains"))?.version ?: ""
+            PluginManager.getPlugin(PluginId.getId("io.CodeClimbers.jetbrains"))?.version ?: ""
         } catch (e: Exception) {
             // use PluginManagerCore if PluginManager deprecated
-            PluginManagerCore.getPlugin(PluginId.getId("xyz.CodeClimbers.jetbrains"))?.version ?: ""
+            PluginManagerCore.getPlugin(PluginId.getId("io.CodeClimbers.jetbrains"))?.version ?: ""
         }
-        log.info("Initializing CodeClimbers plugin v$VERSION (https://CodeClimbers.xyz/)")
+        log.info("Initializing CodeClimbers plugin v$VERSION (https://CodeClimbers.io/)")
 
         // Set runtime constants
         IDE_NAME = ApplicationNamesInfo.getInstance().fullProductName.replace(" ", "").toLowerCase()
