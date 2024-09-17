@@ -1,0 +1,35 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>io.codeclimbers.jetbrains</id>
+    <name>codeclimbers</name>
+    <vendor>codeclimbers</vendor>
+    <description><![CDATA[
+        codeclimbers for Jetbrains. Collect metrics, insights, and time tracking automatically from your programming activity.
+        <ul>
+            <li>Use your IDE like you normally do and your time will be tracked for you automatically.</li>
+            <li>Visit https://app.CodeClimbers.xyz to see your logged time.</li>
+        </ul>
+
+        Source Code: <a href="https://github.com/CodeClimbersIO/jetbrains-climbers">https://github.com/CodeClimbersIO/jetbrains-climbers</a>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <statusBarWidgetFactory implementation="io.codeclimbers.jetbrains.CustomStatusBar" id="xyz.CodeClimbers.jetbrains.CustomStatusBar" order="first" />
+        <postStartupActivity implementation="io.codeclimbers.jetbrains.CodeClimbersStartupActivity" />
+    </extensions>
+
+    <application-components>
+        <component>
+            <implementation-class>io.codeclimbers.jetbrains.CodeClimbers</implementation-class>
+        </component>
+    </application-components>
+
+    <actions>
+        <action id="pluginMenu" class="io.codeclimbers.jetbrains.PluginMenu" text="CodeClimbers">
+            <add-to-group group-id="ToolsMenu" anchor="first" />
+        </action>
+    </actions>
+</idea-plugin>
