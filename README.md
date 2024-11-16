@@ -1,10 +1,9 @@
 # jetbrains-climbers
-
-This is a fork of the Wakatime plugin for Jetbrains [here](https://github.com/wakatime/jetbrains-wakatime).
-
 ![Build](https://github.com/CodeClimbersIO/jetbrains-climbers/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/io.codeclimbers.jetbrains.svg)](https://plugins.jetbrains.com/plugin/io.codeclimbers.jetbrains)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/io.codeclimbers.jetbrains.svg)](https://plugins.jetbrains.com/plugin/io.codeclimbers.jetbrains)
+
+This is a fork of the Wakatime plugin for Jetbrains [here](https://github.com/wakatime/jetbrains-wakatime).
 
 <!-- Plugin description -->
 Code Climbers plugin for Jetbrains. Collect metrics, insights, and time tracking automatically from your programming activity.
@@ -58,5 +57,3 @@ Plugin based on the [IntelliJ Platform Plugin Template][template].
    - Select the zip file from `build/distributions/`
    - Fill in the release notes
    - Submit for review
-
-## Installation
