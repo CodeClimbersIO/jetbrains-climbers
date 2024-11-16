@@ -502,7 +502,7 @@ class CodeClimbers : ApplicationComponent {
         }
 
         fun openDashboardWebsite() {
-            BrowserUtil.browse("http://localhost:14400/")
+            BrowserUtil.browse("https://local.codeclimbers.io")
         }
 
         private var todayText = "initialized"
